@@ -2,27 +2,68 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>MADMAX.BE</title>
+    <title>Mad Max - Mon Site</title>
     <style>
-        /* C'est ici que la magie du design opère */
         body {
+            /* 1. L'IMAGE DE FOND */
+            /* On charge l'image via une URL */
+            background-image: url('https://images.unsplash.com/photo-1491466424936-e304919aada7?q=80&w=2069&auto=format&fit=crop');
+            
+            /* "Cover" est magique : l'image couvre tout l'écran sans se déformer */
+            background-size: cover; 
+            
+            /* Centre l'image pour qu'on voie le sujet principal */
+            background-position: center;
+            
+            /* Empêche l'image de se répéter comme une mosaïque */
+            background-repeat: no-repeat;
+
+            /* 2. LA MISE EN PAGE (inchangée) */
             margin: 0;
-            height: 100vh;      /* Utilise 100% de la hauteur de l'écran */
-            display: flex;       /* Active le mode "flexbox" pour aligner facilement */
+            height: 100vh; /* 100% de la hauteur de vue (Viewport Height) */
+            display: flex;
             justify-content: center; /* Centre horizontalement */
             align-items: center;     /* Centre verticalement */
-            background-color: white; /* Fond blanc */
-            font-family: 'Helvetica', 'Arial', sans-serif; /* Une police plus propre */
+            
+            /* Une petite astuce : couleur du texte en blanc pour lisibilité sur photo sombre */
+            color: white; 
+            font-family: 'Helvetica', sans-serif;
+            
+            /* Indispensable pour que le texte du bas se positionne par rapport à l'écran */
+            position: relative; 
         }
 
         h1 {
-            font-weight: 300;    /* Pour un texte plus fin et élégant */
-            color: #333;         /* Un gris très foncé (plus doux que le noir pur) */
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px #000000; /* Ombre portée pour lire le texte même sur du blanc */
             text-align: center;
+        }
+
+        /* 3. LE TEXTE EN BAS A DROITE */
+        .credits {
+            position: absolute; /* Sort du flux normal pour se placer où on veut */
+            bottom: 20px;       /* A 20 pixels du bas */
+            right: 20px;        /* A 20 pixels de la droite */
+            font-size: 0.8rem;  /* Texte plus petit */
+            opacity: 0.7;       /* Légèrement transparent pour être discret */
+            text-shadow: 1px 1px 2px #000000;
+        }
+        
+        /* Juste pour le lien (le a) : on enlève le soulignement et on met en blanc */
+        .credits a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px dotted white;
         }
     </style>
 </head>
 <body>
-    <h1>Bienvenue sur madmax.be !</h1>
+
+    <h1>Le minimalisme est la clé.</h1>
+
+    <div class="credits">
+        Photo par <a href="https://unsplash.com" target="_blank">Unsplash</a>
+    </div>
+
 </body>
 </html>
